@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-arcade-black: #0a0a0f;
+  --color-arcade-dark: #12121a;
+  --color-arcade-card: #1a1a2e;
+  --color-arcade-border: #2a2a3e;
+  --color-arcade-cyan: #00f0ff;
+  --color-arcade-magenta: #ff00ff;
+  --color-arcade-green: #00ff88;
+  --color-arcade-gold: #ffd700;
+  --color-arcade-text: #e0e0e0;
+  --color-arcade-muted: #888899;
+  --font-arcade: "Press Start 2P", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-arcade-black);
+    color: var(--color-arcade-text);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .neon-glow-cyan {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 0 0 20px rgba(0, 240, 255, 0.1);
+  }
+  .neon-glow-magenta {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3), 0 0 20px rgba(255, 0, 255, 0.1);
+  }
+  .neon-glow-green {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3), 0 0 20px rgba(0, 255, 136, 0.1);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3);
+  }
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
 }
