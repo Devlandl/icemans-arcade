@@ -21,6 +21,17 @@ export const games: Game[] = [
     storeSlug: "dungeon-crawler",
     storeUrl: "https://tvrapp.app/store/dungeon-crawler",
   },
+  {
+    slug: "1d-trivia",
+    title: "1D Trivia: One Direction Fan Quiz",
+    description:
+      "Test your One Direction knowledge across multiple difficulty levels. Earn rewards and unlock the Directions Vault.",
+    file: "1d-trivia.html",
+    image: "/images/1d-trivia.png",
+    price: 3,
+    storeSlug: "1d-trivia",
+    storeUrl: "https://tvrapp.app/store/1d-trivia",
+  },
 ];
 
 export function getGame(slug: string): Game | undefined {
